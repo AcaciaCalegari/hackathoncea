@@ -1,10 +1,12 @@
 //HackathonC&A
 //Rede Mash
+//Autor:Representante da IBM + Codgs da web
 
 //Caso utilze um projeto mais complexo, deixe seu Access point com o DHCP Desabilitado.
 //Verifique se o IP que estamos utilizando esta livre caso conecte em um Roteador.
 
-//Para testar com dois ESP:
+/*
+    Para testar com dois ESP:
         1 - definir o seu ssid e senha do roteador.
         2 - Definir pinos do seu botao e led do seu ESP.
         3 - Para ESP 1 - Mude a linha 54, coloque igual a 0
@@ -16,10 +18,10 @@
 
     Para testar com o PC:
         1 - Conecte seu pc na mesma rede dos ESP.
-        2 - atravez do programa - "Packet Sender" ou IO-ninja
+        2 - através do programa - "Packet Sender" ou IO-ninja
             selecione a porta e o IP do ESP e envie a palavra
             "hello", o ESP deve responder: "OK, msg recebida..."
-
+*/
 
 //  Libraries.
 #include <ESP8266WiFi.h>    // Biblioteca para utilizacao de dados Wifi
@@ -61,7 +63,7 @@ WiFiUDP Udp;    // Instanciamos a utilizacao do UDP;
 
 unsigned int localUdpPort = 4210;   // Porta local para trafego de dados.
 char incomingPacket[255];           // buffer para recebimento de pacotes.
-char  replyPacekt[] = "OK, msg recebida...";         // msg de resposta quando recebe algo
+char  replyPacekt[] = "OK, msg recebida...";    // msg de resposta quando recebe algo
 
 char  testPacekt[] = "hello";
 
@@ -159,7 +161,6 @@ void recebePacote(void){
     }
 }
 
-//  o nome da funcao ja fala tudo rsrs
 void trataPacoteRecebido(void){
 
     if(msgRecebidaConvertida == msgToggleLed)
