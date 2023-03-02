@@ -12,9 +12,9 @@ void setup(){
 
 }
 
-void loop(){ //aki eh o looping do bglh, q repete em milisegundo
-  val = analogRead(analogPin); //valor inteiro da variavel sendo processado/lido analogicamente pelo pino analog
-  Serial.println(val); //imprime o valor serial na tela de comando da ide p seligar na funcionalidade
-  delay(1000); //isso ate parece mt tmp, mas na real eh so o tmp em mili segundo
+void loop(){ //aki eh o looping, q repete em milisegundo
+  val = analogRead(analogPin); //valor inteiro da variavel sendo processado/lido pelo pino analog
+  Serial.println(val); //imprime o valor serial na tela de comando da ide
+  delay(1000); //isso ate parece mt tmp, mas na real eh soh 1seg em mili segundos
 
 }
