@@ -1,7 +1,6 @@
 //Hackathon C&A
 // Programa: Versao firmware modulo ESP8266 e mudanca de baud rate (velocidade)
 //alterar a velocidade de comunicação (baud rate) do módulo, que por padrão está setada em 115200 (firmware versão 0.9.5), para 19200
-// Autor : Acacia CAlegari
  
 #include <SoftwareSerial.h>
  
@@ -21,8 +20,13 @@ void setup()
   Serial.println("Versao de firmware");
   delay(3000);
   sendData("AT+GMRrn", 2000, DEBUG); // rst
-  // Configure na linha abaixo a velocidade desejada para a
-  // comunicacao do modulo ESP8266 (9600, 19200, 38400, etc)
+
+  /*
+  Configure na linha abaixo a velocidade desejada para a
+  comunicacao do modulo ESP8266 (9600, 19200, 38400, etc) 
+  */
+
+
   sendData("AT+CIOBAUD=19200rn", 2000, DEBUG);
   Serial.println("** Final **");
 }
