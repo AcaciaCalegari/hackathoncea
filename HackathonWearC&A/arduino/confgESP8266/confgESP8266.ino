@@ -1,7 +1,6 @@
 //HackathonC&A
 //Programa: Web Server com modulo ESP8266
-//Autora : Acacia Calegari
-// Alteracoes e adaptacoes: Themon.io
+// Alteracoes e adaptacoes: AcaciaCalegari
 
 #include <SoftwareSerial.h>
 
@@ -58,7 +57,7 @@ void loop()
       sendData(webpage, 1000, DEBUG);
 
       String closeCommand = "AT+CIPCLOSE=";
-      closeCommand += connectionId; // append connection id
+      closeCommand += connectionId; // anexar id de conexão
       closeCommand += "rn";
 
       sendData(closeCommand, 3000, DEBUG);
@@ -76,8 +75,8 @@ String sendData(String command, const int timeout, boolean debug)
   {
     while (esp8266.available())
     {
-      // The esp has data so display its output to the serial window
-      char c = esp8266.read(); // read the next character.
+        //mostrar dados do esp na janela serial
+      char c = esp8266.read(); // lê o prox char.
       response += c;
     }
   }
